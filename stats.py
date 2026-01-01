@@ -19,3 +19,23 @@ def count_characters(text):
             chars_map[ch] += 1
     
     return chars_map
+
+def sorted_list(chars):
+    sorted_dictionaries = []
+
+    for key, value in chars.items():
+        dictionaries = {"chars": key, "num": value}
+        sorted_dictionaries.append(dictionaries)
+
+    sorted_dictionaries.sort(reverse=True, key=sort_on)
+    return sorted_dictionaries
+
+def sort_on(items):
+    return items["num"]
+
+def print_sorted_data(sorted_data):
+    for item in sorted_data:
+        ch = item["chars"]
+        num = item["num"]
+        if ch.isalpha():
+            print(f"{ch}: {num}")
